@@ -1,0 +1,59 @@
+#header {
+
+    text-align: center;
+    color: #121212;
+}
+
+img {
+
+    width: 380px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid #121212
+}
+
+.brief, .terms{
+
+    text-align: center;
+    font-style: italic;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+
+}
+
+.newsletter-email {
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid #121212;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.newsletter-btn {
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 225px;
+    background-color: #121212;
+    color: white;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-weight: bold;
+}
+
+.terms {
+
+    font-style: normal;
+}
+
+u {
+
+    font-style: italic;
+}
