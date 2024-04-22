@@ -5,6 +5,7 @@ body {
     background-repeat: no-repeat;
     color: #020202;
     font-family: "Open Sans", sans-serif;
+    text-shadow: 0px 0px 10px white;
 }
 
 .container {
