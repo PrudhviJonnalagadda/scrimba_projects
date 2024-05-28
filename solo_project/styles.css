@@ -1,0 +1,90 @@
+#site-pic {
+    height: 340px;
+    width: 720px;
+}
+
+.info-container {
+  position: relative;
+  text-align: center;
+  background: url("images/hyderabad_1.jpg");
+  background-size: cover;
+  height: 360px;
+  width: 720px;
+  display: flex;
+  flex-direction: column;
+  margin:auto;
+}
+
+#page-header {
+  position: relative;
+  margin: 100px auto 0px;
+  color: white;
+  background: #1D3557;
+  width: 200px;
+  text-align: center;
+  border-radius: 10px;
+
+}
+
+#page-info {
+  position: relative;
+  margin: 50px auto 0px;
+  color: white;
+  background: #457B9D;
+  width: 300px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.suggestion {
+        height: 360px;
+        width: 720px;
+        background: #F1FAEE;
+        margin: 0 auto;
+        position: relative;
+}
+
+#suggestion-title {
+      position: relative;
+      margin: 0px auto 0px auto;
+      color: #1D3557;
+      width: 500px;
+      text-align: center;
+      padding: 50px 0 0 0;
+}
+
+.images {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.headline {
+    text-align: center;
+    margin: 20px auto 20px auto;
+    width: 180px;
+    font-weight: bold;
+    color: #1D3557;
+
+}
+
+.activities {
+   display: flex;
+   margin-top: 50px;
+   margin-left: auto;
+   margin-right: auto;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+}
+
+#activity-container {
+display: flex;
+}
+
+.story {
+    text-align: center;
+    margin: auto;
+    width: 200px;
+}
