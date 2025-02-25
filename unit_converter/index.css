@@ -1,0 +1,56 @@
+#unit-container {
+
+    width: 550px;
+    height: 280px;
+    background: rgb(105, 67, 255);
+    margin: auto;
+}
+
+#header {
+
+    color: whitesmoke;
+    padding: 20px 40px 20px 40px;
+    text-align: center;
+}
+
+#units {
+
+    width: 100px;
+    height: 75px;
+    display: block;
+    margin: auto;
+    border: 2px solid whitesmoke;
+    text-align: center;
+    background: rgb(105, 67, 255);
+    border-radius: 5px;
+    font-weight: bolder;
+    color: whitesmoke;
+
+}
+
+input:focus {
+  outline: none;
+}
+
+#convert-btn {
+
+    padding: 5px 10px 5px 10px;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 2px solid whitesmoke;
+}
+
+#legend-container {
+margin-top: 30px;
+
+}
+.legend {
+    width: 400px;
+    height: 50px;
+    background: rgb(105, 67, 255);
+    margin: 15px auto 15px auto;
+    display: block;
+
+}
