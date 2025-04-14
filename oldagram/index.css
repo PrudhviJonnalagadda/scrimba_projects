@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    margin: auto;
+}
+
+body,
+.container,
+.posts {
+    width: 400px;
+}
+
+
+.section-one {
+    border-top: 2px solid #EDEDED;
+}
+
+.header,
+.feed-about,
+.interactions,
+.activity {
+
+    display: flex;
+}
+
+.header{
+    justify-content: space-between;
+    padding: 10px 5px;
+}
+
+.container {
+    display: block;
+    margin: 0 auto;
+}
+
+.feed-about {
+    margin: 0px;
+    padding: 12px 0px;
+}
+
+.feed-about h4 , .feed-about p{
+    margin: 0px;
+    padding-left: 10px;
+}
+
+.interactions{
+
+    width: 105px;
+    height: 24px;
+    justify-content: space-between;
+    padding: 10px 5px;
+
+}
+
+.activity{
+    flex-direction: column;
+    padding: 0px 5px;
+    align-items: start;
+    margin: 0;
+
+}
+
+.activity p {
+
+    margin: 5px 0;
+}
+section {
+
+    border-top: 15px solid #EDEDED;
+}
+
+span {
+
+    font-weight: bold;
+}
+
+.comments span{
+
+    padding-right: 5px;
+}
+
+/* Images */
+
+.logo {
+
+    width: 90px;
+    height: 34px;
+}
+
+.icon {
+    border-radius: 100%;
+    height: 34px;
+    width: 34px;
+    padding: 2px;
+    margin: 0px;
+ }
+
+.avatar {
+    border-radius: 100%;
+    height: 34px;
+    width: 34px;
+    padding: 0 8px;
+ }
