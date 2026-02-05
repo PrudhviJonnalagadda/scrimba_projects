@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSM Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 100px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .mode-selector {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .mode-selector button {
+            padding: 10px 20px;
+            border: none;
+            background: #ddd;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .mode-selector button.active {
+            background: #007bff;
+            color: white;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="logo.png" alt="Company Logo" class="logo">
+        <h1>GSM Converter</h1>
+        <div class="mode-selector">
+            <button id="gsm-to-weight" class="active">GSM to Weight</button>
+            <button id="weight-to-gsm">Weight to GSM</button>
+        </div>
+        <div id="gsm-to-weight-form">
+            <div class="input-group">
+                <label for="width-gsm">Width (cm)</label>
+                <input type="number" id="width-gsm" step="0.01">
+            </div>
+            <div class="input-group">
+                <label for="length-gsm">Length (cm)</label>
+                <input type="number" id="length-gsm" step="0.01">
+            </div>
+            <div class="input-group">
+                <label for="gsm">GSM (g/m²)</label>
+                <input type="number" id="gsm" step="0.01">
+            </div>
+            <div class="input-group">
+                <label for="quantity-gsm">Item Quantity</label>
+                <input type="number" id="quantity-gsm" step="1" min="1" value="1">
+            </div>
+            <button id="convert-gsm">Convert</button>
+        </div>
+        <div id="weight-to-gsm-form" class="hidden">
+            <div class="input-group">
+                <label for="weight">Weight (g)</label>
+                <input type="number" id="weight" step="0.01">
+            </div>
+            <div class="input-group">
+                <label for="width-weight">Width (cm)</label>
+                <input type="number" id="width-weight" step="0.01">
+            </div>
+            <div class="input-group">
+                <label for="length-weight">Length (cm)</label>
+                <input type="number" id="length-weight" step="0.01">
+            </div>
+            <button id="convert-weight">Convert</button>
+        </div>
+        <div id="result" class="result hidden"></div>
+    </div>
+
+    <script>
+        const gsmToWeightBtn = document.getElementById('gsm-to-weight');
+        const weightToGsmBtn = document.getElementById('weight-to-gsm');
+        const gsmForm = document.getElementById('gsm-to-weight-form');
+        const weightForm = document.getElementById('weight-to-gsm-form');
+        const resultDiv = document.getElementById('result');
+
+        gsmToWeightBtn.addEventListener('click', () => {
+            gsmToWeightBtn.classList.add('active');
+            weightToGsmBtn.classList.remove('active');
+            gsmForm.classList.remove('hidden');
+            weightForm.classList.add('hidden');
+            resultDiv.classList.add('hidden');
+        });
+
+        weightToGsmBtn.addEventListener('click', () => {
+            weightToGsmBtn.classList.add('active');
+            gsmToWeightBtn.classList.remove('active');
+            weightForm.classList.remove('hidden');
+            gsmForm.classList.add('hidden');
+            resultDiv.classList.add('hidden');
+        });
+
+        document.getElementById('convert-gsm').addEventListener('click', () => {
+            const width = parseFloat(document.getElementById('width-gsm').value);
+            const length = parseFloat(document.getElementById('length-gsm').value);
+            const gsm = parseFloat(document.getElementById('gsm').value);
+            const quantity = parseFloat(document.getElementById('quantity-gsm').value);
+            if (isNaN(width) || isNaN(length) || isNaN(gsm) || isNaN(quantity) || quantity < 1) {
+                resultDiv.textContent = 'Please enter valid numbers. Quantity must be at least 1.';
+            } else {
+                const weight = gsm * (width / 100) * (length / 100) * quantity;
+                let displayWeight;
+                if (weight > 999) {
+                    displayWeight = `${(weight / 1000).toFixed(2)} kg`;
+                } else {
+                    displayWeight = `${weight.toFixed(2)} g`;
+                }
+                resultDiv.textContent = `Total Weight: ${displayWeight}`;
+            }
+            resultDiv.classList.remove('hidden');
+        });
+
+        document.getElementById('convert-weight').addEventListener('click', () => {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const width = parseFloat(document.getElementById('width-weight').value);
+            const length = parseFloat(document.getElementById('length-weight').value);
+            if (isNaN(weight) || isNaN(width) || isNaN(length)) {
+                resultDiv.textContent = 'Please enter valid numbers.';
+            } else {
+                const gsm = (weight / ((width / 100) * (length / 100))).toFixed(2);
+                resultDiv.textContent = `GSM: ${gsm} g/m²`;
+            }
+            resultDiv.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>

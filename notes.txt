@@ -1,0 +1,117 @@
+Add punctuation marks to alt text in img tag
+
+"for" in label tag should match with "id" in input tag
+
+fieldset, legend 
+
+1 rem = 16px;
+
+ARIA - Accessible Rich Internet Applications
+       Provides a way to make web applications and dynamic content more accessible to assistive technologies such as screen readers and voice recognition software.
+
+aria-checked true or false
+aria-live off, polite, assertive
+aria-controls
+
+There should be only one h1 tag per page.
+h1 to h6 should be consecutive and should not skip like h1 and then directly to h4. same is css styling too
+
+
+CSS link styling pneumonic
+
+
+/* 
+L ink (a)
+o
+V isited
+e
+H over
+A ctive
+t
+e
+
+ */
+
+By default every element has a margin. be careful with child and parent margins. they add up!
+
+ background: linear-gradient(#14463d, #016a26); css property to get darker to lighter shades of color
+
+
+applies only if flex-direction is row
+
+.....................................................main-axis............................................... (controlled by justify-content)
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+vertical-axis (controlled by align-items)
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+CSS points
+element = 1 point
+class = 10 points
+id = 100 points
+
+!important keyword
+
+when should we use a link and when should we use  button?
+
+Buttons for actions that effect the website's front-end or back-end
+
+Links for navigation to somewhere on the same page, within the site, or elsewhere on the internet.
+
+BLOCK, INLINE, INLINE-BLOCK
+
+Block
+
+- stack on top of each other
+- div, p, h1, etc... are all example of block elements
+- set height and margin top and bottom
+
+Inline
+
+- sit side by side
+- span and a are all examples of inline element
+- can't set height and margin top and bottom
+
+Inline-block
+
+- sit side by side
+- button and input are examples of inline-block
+- set height and margin top and bottom.
+
+flexbox flex-wrap (a feature of flexbox)]
+
+Overflow
+
+default behaviour
+
+overflow: visible; if content exceeds the boundaries of its container, it will be visible outside the container.
+
+overriding default behaviour
+
+overflow: hidden;
+overflow: scroll;
+overflow: auto;
+overflow-x, overflow-y
+
+Floats
+
+headings don't use font-weight set in body
+
+	
